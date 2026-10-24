@@ -46,7 +46,7 @@ rss-aggregator/
 │   └── settings.json
 ├── lib/            ← you will put the library JARs here
 └── src/
-    └── App.java    ← delete this; you will write your own
+    └── App.java    ← keep this; you will reuse it
 README.md
 ```
 
@@ -62,7 +62,7 @@ Open `.vscode/settings.json`. It should contain:
 
 The `referencedLibraries` line is the important one. It tells VS Code to put **every `.jar` file in `lib/` on the classpath**. Copy a JAR into `lib/` and your code can use it. (If you created the folder by hand, create this file yourself with the content above.)
 
-Delete the generated `src/App.java`.
+Keep the generated `src/App.java`. In Step 3 you will move it into a package, and later you will use it to test your classes and then run the finished program.
 
 ---
 
@@ -132,6 +132,8 @@ Every class in this tutorial goes in there, and each file starts with:
 package com.rss;
 ```
 
+Now move the generated `App.java` into the package: in the Explorer, drag `src/App.java` onto the `com.rss` package so it ends up at `src/com/rss/App.java`. Open it and check that the first line is `package com.rss;`. If VS Code has not added it, type it in yourself. A class's package declaration must match the folder it sits in, otherwise the code will not compile.
+
 Next, create a file called `feeds.txt` in the **project root**, next to `src/` and `lib/`, not inside `src/`. Put one feed URL on each line:
 
 ```
@@ -197,7 +199,7 @@ public class FeedItem {
 
 ---
 
-To test this works, create a file `src/com/rss/App.java`:
+To test this works, replace the contents of `src/com/rss/App.java` with:
 
 ```java
 package com.rss;
