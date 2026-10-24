@@ -1,0 +1,50 @@
+@startuml uml
+!pragma layout smetana
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+hide empty members
+
+package "com.rss" as rss {
+  class App {
+    + {static} main(args : String[]) : void
+  }
+
+  class FeedReader {
+    ~ feeds : List<Feed>
+    + FeedReader(urls : List<String>)
+    + toString() : String
+  }
+
+  class Feed {
+    - url : String
+    - title : String
+    - items : List<FeedItem>
+    + Feed(url : String)
+    + getTitle() : String
+    + getItems() : List<FeedItem>
+    + toString() : String
+  }
+
+  class FeedItem {
+    - title : String
+    - link : String
+    - description : String
+    - pubDate : Date
+    + FeedItem(title : String, link : String, description : String, pubDate : Date)
+    + toString() : String
+  }
+}
+
+package "com.rometools.rome (lib/rome-2.1.0.jar)" as rome {
+  class SyndFeedInput
+  class XmlReader
+  class SyndFeed
+  class SyndEntry
+}
+
+App ..> FeedReader : creates
+FeedReader *-- "0..*" Feed
+Feed *-- "0..*" FeedItem
+Feed ..> rome : uses
+@enduml
