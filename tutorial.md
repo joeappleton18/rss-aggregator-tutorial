@@ -105,19 +105,6 @@ lib/
 
 If you'd rather skip the individual downloads, download [`rome-2.1.0-with-dependencies.zip`](./lib/rome-2.1.0-with-dependencies.zip), which contains all four JARs. Extract it into your project's `lib/` folder so that the `.jar` files sit directly inside `lib/`, not in a subfolder.
 
-### Alternative: download from the terminal
-
-On macOS, Linux, or Git Bash on Windows, run this from inside the project folder:
-
-```bash
-cd lib
-curl -O https://repo1.maven.org/maven2/com/rometools/rome/2.1.0/rome-2.1.0.jar
-curl -O https://repo1.maven.org/maven2/com/rometools/rome-utils/2.1.0/rome-utils-2.1.0.jar
-curl -O https://repo1.maven.org/maven2/org/jdom/jdom2/2.0.6.1/jdom2-2.0.6.1.jar
-curl -O https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.6/slf4j-api-2.0.6.jar
-cd ..
-```
-
 ---
 
 ## Step 3: Create the package and the data files
