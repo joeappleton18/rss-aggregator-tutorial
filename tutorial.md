@@ -101,6 +101,10 @@ lib/
 
 **Check:** In the VS Code Explorer, expand **Java Projects → rss-aggregator → Referenced Libraries**. All the JARs should be listed. If they are not, run **Java: Clean Java Language Server Workspace** from the Command Palette.
 
+### Shortcut: download them all in one zip
+
+If you'd rather skip the individual downloads, download [`rome-2.1.0-with-dependencies.zip`](./lib/rome-2.1.0-with-dependencies.zip), which contains all four JARs. Extract it into your project's `lib/` folder so that the `.jar` files sit directly inside `lib/`, not in a subfolder.
+
 ### Alternative: download from the terminal
 
 On macOS, Linux, or Git Bash on Windows, run this from inside the project folder:
